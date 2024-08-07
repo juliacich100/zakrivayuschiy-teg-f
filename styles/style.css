@@ -84,7 +84,7 @@ button,
   text-transform: uppercase;
 }
 
-.header__theme-menu{
+.header__theme-menu {
   display:grid;
   justify-items: center;
   margin-left: 20px;
@@ -254,7 +254,7 @@ img {
 }
 
 .bungee-girl {
-  filter: hue-rotate(20deg);
+  filter: brightness(150%) hue-rotate(20deg);
 }
 
 .lemur {
@@ -268,7 +268,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: 27px;
-  text-align: left;
 }
 
 .card__controls {
