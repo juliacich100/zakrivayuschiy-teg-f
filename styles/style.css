@@ -232,31 +232,31 @@ img {
   }
 }
 
-.supergirl {
+.saturate-filter {
   filter: saturate(140%);
 }
 
-.head {
+.grayscale-filter {
   filter: grayscale(0.5);
 }
 
-.hand {
+.brightness-filter {
   filter: brightness(85%);
 }
 
-.road-sign {
+.contrast-filter {
   filter: contrast(90%);
 }
 
-.superkids {
+.sepia-filter {
   filter: sepia(20%);
 }
 
-.bungee-girl {
-  filter: brightness(150%) hue-rotate(20deg);
+.multi-filter {
+  filter: brightness(75%) hue-rotate(20deg);
 }
 
-.lemur {
+.blur-filter {
   filter: blur(2px);
 }
 
