@@ -23,7 +23,6 @@
   color: var(--main-color);
   background-color: var(--bg-color);
   background-image: var(--background-image);
-  background-position: center;
   background-attachment: fixed;
   background-size: cover;
   display: flex;
@@ -49,7 +48,7 @@
 .header,
 .card__images,
 button,
-#footer__modal {
+#save-button-modal {
   border: 2px solid var(--main-color);
 }
 
@@ -59,8 +58,8 @@ button,
 
 .header,
 .card__content,
-.footer__button,
-#footer__modal {
+.save-button__content,
+#save-button-modal {
   background-color: var(--bg-color);
 }
 
@@ -73,6 +72,7 @@ button,
 .main-title,
 .subtitle {
   text-align: center;
+  text-transform: uppercase;
 }
 
 .main-title {
@@ -81,7 +81,6 @@ button,
 
 .subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  text-transform: uppercase;
 }
 
 .header__theme-menu {
@@ -246,7 +245,7 @@ img {
 }
 
 .road-sign {
-  filter: contrast(130%);
+  filter: contrast(90%);
 }
 
 .superkids {
@@ -377,8 +376,7 @@ img {
   height: 38px;
 }
 
-.card__like-button,
-.footer__button {
+.button-state {
   overflow: hidden;
   position: relative;
 }
@@ -399,9 +397,8 @@ img {
   border-color: var(--main-color);
   transition: border-color 0.3s ease;
 }
-
-.card__like-button::before,
-.footer__button::before {
+ 
+.button-state::before {
   content: "";
   display: block;
   width: 100%;
@@ -413,24 +410,24 @@ img {
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
 }
-
-.card__like-button:hover::before,
-.footer__button:hover::before {
+ 
+.button-state:hover::before {
   transform: translateX(0);
 }
-
-.card__like-button:focus,
-.footer__button:focus {
+ 
+.button-state:focus {
   outline: none;
   box-shadow: 2px 2px var(--main-color);
   transition: box-shadow 0.3s ease;
 }
 
-.footer {
+.save-button {
   padding: 50px 0 100px;
+  display: flex;
+  justify-content: center;
 }
 
-.footer__button {
+.save-button__content {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -445,7 +442,7 @@ img {
   fill: var(--button-color);
 }
 
-#footer__modal {
+#save-button-modal {
   padding: 30px;
   color: inherit;
   max-inline-size: 357px;
@@ -453,7 +450,7 @@ img {
   min-inline-size: 340px;
 }
 
-#footer__modal[open] {
+.modal-form {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -481,17 +478,22 @@ img {
 }
 
 .modal-button {
+  width: 100%;
   height: 38px;
+}
+
+.modal-button .button__text {
+  text-transform: uppercase;
   padding: 12.5px 0;
 }
 
-#footer__modal::backdrop {
+#save-button-modal::backdrop {
   background-color: #000;
   opacity: 75%;
 }
 
 @media (device-width <= 375px) {
-  .footer__button {
+  .save-button__content {
     flex-direction: column;
     height: 84px;
     padding: 15px 20.5px 15px 19.5px;
@@ -501,7 +503,7 @@ img {
     width: 28px;
     height: 28px;
   }
-  #footer__modal {
+  #save-button-modal {
     padding-inline: 40px;
   }
   .mobile-border {
