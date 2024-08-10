@@ -12,3 +12,60 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.theme-menu__button:disabled::before {
+    animation-name: swinging-arrow;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes swinging-arrow {
+    0% {
+      translate: 0;
+    }
+    50% {
+      translate: 4px;
+    }
+    100% {
+      translate: 0;
+    }
+  }
+
+  .like-icon.is-liked .heart {
+    animation-name: increasing;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.1s;
+  }
+  
+  .like-icon.is-liked .sparks {
+    animation: sparkling 0.3s ease-in 0.3s;
+  }
+  
+  @keyframes increasing {
+    0% {
+      transform: scale(1);
+      transform-origin: center;
+    }
+    50% {
+      transform: scale(1.5);
+      transform-origin: center;
+    }
+    100% {
+      transform: scale(1);
+      transform-origin: center;
+    }
+  }
+  
+  @keyframes sparkling {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

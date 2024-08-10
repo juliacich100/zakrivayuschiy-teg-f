@@ -38,7 +38,7 @@
   padding-top: clamp(120px, 20%, 136px);
   padding-bottom: 25px;
   gap: 25px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: var(--font-size-s);
   line-height: 1;
   font-weight: 400;
@@ -91,15 +91,13 @@ button,
 
 .theme-menu__list {
   display: grid;
-  gap: 14px;
-  width: 84px;
-  height: 70px;
+  gap: 13.1px;
 }
 
 button {
   cursor: url(../images/hover-cursor.png), pointer;
   background-color: transparent;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: var(--font-size-s);
   text-transform: uppercase;
   font-weight: 400;
@@ -123,23 +121,7 @@ button {
   content: "▶";
   position: absolute;
   left: -20px;
-  animation-name: swinging-arrow;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
   pointer-events: none;
-}
-
-@keyframes swinging-arrow {
-  0% {
-    translate: 0;
-  }
-  50% {
-    translate: 4px;
-  }
-  100% {
-    translate: 0;
-  }
 }
 
 .theme-menu__button:focus {
@@ -189,8 +171,6 @@ button {
   font-variation-settings: 'wght' var(--title-weight);
   line-height: 1.21;
   padding: 4.5px 10px 5.5px;
-  min-height: 33px;
-  max-height: 54px;
 }
 
 .card__images {
@@ -213,7 +193,7 @@ img {
   z-index: 2;
   top: 25px;
   right: clamp(13px, 3.5%, 25px);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: var(--font-size-s);
   opacity: 50%;
   text-shadow:
@@ -333,44 +313,6 @@ img {
   transition: fill 0.1s;
 }
 
-.like-icon.is-liked .heart {
-  animation-name: increasing;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in;
-  animation-delay: 0.1s;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparkling 0.3s ease-in 0.3s;
-}
-
-@keyframes increasing {
-  0% {
-    transform: scale(1);
-    transform-origin: center;
-  }
-  50% {
-    transform: scale(1.5);
-    transform-origin: center;
-  }
-  100% {
-    transform: scale(1);
-    transform-origin: center;
-  }
-}
-
-@keyframes sparkling {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .card__like-button {
   width: 130px;
   height: 38px;
@@ -442,7 +384,7 @@ img {
   fill: var(--button-color);
 }
 
-#save-button-modal {
+#save-button-modal[open] {
   padding: 30px;
   color: inherit;
   max-inline-size: 357px;
@@ -471,7 +413,7 @@ img {
 }
 
 .modal-text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: var(--font-size-s);
   text-transform: uppercase;
   line-height: 21px;
@@ -492,7 +434,7 @@ img {
   opacity: 75%;
 }
 
-@media (device-width <= 375px) {
+@media (width <= 100dvb) {
   .save-button__content {
     flex-direction: column;
     height: 84px;
@@ -503,7 +445,7 @@ img {
     width: 28px;
     height: 28px;
   }
-  #save-button-modal {
+  #save-button-modal[open] {
     padding-inline: 40px;
   }
   .mobile-border {
