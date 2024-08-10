@@ -48,7 +48,7 @@
 .header,
 .card__images,
 button,
-#save-button-modal {
+#save-button-modal[open] {
   border: 2px solid var(--main-color);
 }
 
@@ -59,7 +59,7 @@ button,
 .header,
 .card__content,
 .save-button__content,
-#save-button-modal {
+#save-button-modal[open] {
   background-color: var(--bg-color);
 }
 
